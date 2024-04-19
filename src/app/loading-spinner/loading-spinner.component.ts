@@ -16,9 +16,10 @@ export class LoadingSpinnerComponent {
     this.isLoading = true;
     this.http.get('https://httpbin.org/get').subscribe((data) => {
       // Process your data here
+      console.log("Pass: "+data)
       this.isLoading = false;
     }, (error) => {
-      // Handle error
+      console.error("Fail: "+error)
       this.isLoading = false;
     });
   }

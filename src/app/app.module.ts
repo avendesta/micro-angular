@@ -8,12 +8,18 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { provideHttpClient, withFetch } from "@angular/common/http";
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { Parent1Component } from './parent-1/parent-1.component';
+import { Child1Component } from './child-1/child-1.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    Parent1Component,
+    Child1Component,
+
   ],
   imports: [
     BrowserModule,
@@ -24,6 +30,7 @@ import { provideHttpClient, withFetch } from "@angular/common/http";
   providers: [
     provideClientHydration(),
     provideHttpClient(withFetch()),
+    provideAnimationsAsync(),
   ],
   bootstrap: [AppComponent]
 })
